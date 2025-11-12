@@ -59,7 +59,7 @@ function TelaGameOver() {
     text("Clique ou pressione R para reiniciar", width / 2, botaoY + 35);
   };
 
-  // Retorna true se (mx,my) estiver sobre o botão de reiniciar
+  // Clique do botão de reiniciar
   this.clicouNoBotaoReiniciar = function (mx, my) {
     let botaoY = height / 2 + 80;
     let botaoX = width / 2;

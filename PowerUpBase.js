@@ -18,7 +18,6 @@ class PowerUpBase {
     }
   }
 
-  // Retorna hitbox
   getHitbox() {
     return {
       x: this.x,

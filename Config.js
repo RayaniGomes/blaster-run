@@ -5,9 +5,9 @@ class Config {
     return 5;
   }
 
-  // Obter intervalo de spawn de power-ups (ms)
+  // Obter intervalo de spawn de power-ups
   static getIntervaloPowerUp() {
-    return 30000; // 30 segundos
+    return 30000; 
   }
 
   // Obter velocidade padrão
@@ -17,7 +17,7 @@ class Config {
 
   // Obter tempo de invencibilidade
   static getTempoInvencibilidade() {
-    return 2000; // 2 segundos
+    return 2000; 
   }
 
   // Obter pontuação por tipo de inimigo

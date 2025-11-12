@@ -94,7 +94,6 @@ class BalaInimiga extends BalaBase {
     this.corBrilho = color(255, 0, 0, 150);
   }
 
-  // Override do método show
   show() {
     if (this.ativa) {
       fill(this.cor);

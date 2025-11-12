@@ -164,9 +164,9 @@ class Inimigo extends EntidadeGame {
     this.vida--;
     if (this.vida <= 0) {
       this.ativa = false;
-      return true; // Inimigo derrotado
+      return true;
     }
-    return false; // Ainda tem vida
+    return false;
   }
 
   getHitbox() {

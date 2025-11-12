@@ -5,7 +5,7 @@ function TelaInicio() {
     fill(0, 0, 0, 50);
     rect(0, 0, width, height);
 
-    // TÍTULO PRINCIPAL - Efeito neon
+    // TÍTULO PRINCIPAL
     this.desenharTitulo();
 
     // Subtítulo
@@ -13,18 +13,18 @@ function TelaInicio() {
     textSize(20);
     text("Sobreviva e destrua todos os inimigos!", width / 2, height / 2 - 170);
 
-    // RECORDE - Destaque especial
+    // RECORDE
     this.desenharRecorde();
 
-    // CONTROLES - Box estilizado
+    // CONTROLES
     this.desenharBoxControles();
 
-    // BOTÃO INICIAR - Efeito pulsante
+    // BOTÃO INICIAR
     this.desenharBotaoIniciar();
   };
 
+  // Desenhar título
   this.desenharTitulo = function () {
-    // Efeito neon para o título
     let pulsoTitulo = sin(frameCount * 0.08) * 0.08 + 1.0;
     textAlign(CENTER, CENTER);
 
@@ -33,13 +33,12 @@ function TelaInicio() {
     let y = height / 2 - 210;
 
     push();
-    // Camada de brilho (shadow) via contexto do canvas
+    // Camada de brilho 
     try {
       drawingContext.shadowBlur = 30;
       drawingContext.shadowColor = "rgba(0,150,255,0.9)";
     } catch (e) {}
 
-    // Glow amplo (camadas maiores e translúcidas)
     noStroke();
     for (let i = 6; i >= 1; i--) {
       let alpha = map(i, 6, 1, 18, 160);
@@ -48,7 +47,6 @@ function TelaInicio() {
       text("BLASTER RUN", x, y);
     }
 
-    // Centro brilhante com contorno leve
     stroke(80, 200, 255);
     strokeWeight(2);
     fill(200, 255, 255);
@@ -58,17 +56,16 @@ function TelaInicio() {
     pop();
   };
 
+  // Box de controles
   this.desenharBoxControles = function () {
     let boxY = height / 2 - 30;
     let boxHeight = 140;
 
-    // Box de controles com borda neon
     fill(10, 20, 40, 200);
     stroke(0, 150, 255, 200);
     strokeWeight(2);
     rect(width / 2 - 180, boxY, 360, boxHeight, 10);
 
-    // Título "CONTROLES"
     fill(0, 200, 255);
     textSize(22);
     text("CONTROLES", width / 2, boxY + 30);

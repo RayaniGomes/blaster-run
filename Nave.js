@@ -11,7 +11,7 @@ class Nave extends EntidadeGame {
     this.#tempoInvencibilidade = 0;
 
     this.velocidade = Config.getVelocidadePadrao();
-    this._vida = 3; // Protected (convenção)
+    this._vida = 3; 
   }
 
   get vida() {
@@ -105,16 +105,13 @@ class Nave extends EntidadeGame {
     }
   }
 
-  // Override do método getHitbox 
   getHitbox() {
-    // Usa super para obter hitbox base e adiciona propriedades específicas
     let hitbox = super.getHitbox();
     hitbox.x = this.x;
     hitbox.y = this.y;
     return hitbox;
   }
 
-  // Alias para compatibilidade
   get xNave() {
     return this.x;
   }

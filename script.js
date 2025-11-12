@@ -60,7 +60,7 @@ function draw() {
     atualizarEfeitos();
     atualizarTextosFlutuantes();
 
-    // Spawn de power-ups a cada 30 segundos
+    // Spawn de power-ups 
     spawnPowerUp();
 
     // Desenha elementos do jogo
@@ -107,7 +107,7 @@ function gameControls() {
 
   // Tiro contínuo enquanto a barra de espaço estiver pressionada
   if (keyIsDown(32) && jogoAtivo && !gameOver) {
-    // Barra de espaço (código 32)
+    // Barra de espaço
     let agora = millis();
     if (agora - ultimoTiro >= intervaloEntreTiros) {
       atirar();
@@ -117,9 +117,8 @@ function gameControls() {
 }
 
 function keyPressed() {
-  // Reiniciar jogo
+  // Reiniciar jogo (Tecla R)
   if (keyCode === 82 && gameOver) {
-    // Tecla R
     if (
       typeof telaGameOver === "object" &&
       typeof telaGameOver.reiniciarJogo === "function"
@@ -129,16 +128,14 @@ function keyPressed() {
     return;
   }
 
-  // Iniciar jogo
+  // Iniciar jogo (Enter)
   if (keyCode === 13 && !jogoAtivo && !gameOver) {
-    // Enter
     iniciarJogo();
     return;
   }
 
-  // Troca de arma: 1 = básica, 2 = rápida, 3 = dupla
+  // Troca de arma ao pressionar Q
   if (!gameOver && jogoAtivo) {
-    // Troca de arma apenas ao pressionar Q (cicla para trás)
     if (key === "q" || key === "Q") {
       ciclarArma(-1);
       return;
@@ -168,7 +165,6 @@ function mousePressed() {
 }
 
 // Calcula o bônus de velocidade para inimigos com base na pontuação
-// A cada 500 pontos, retorna +3, com limite máximo de 12
 function getBonusVelocidadeInimigos() {
   let passos = Math.floor(pontuacao / 500);
   let bonus = passos * 3;
